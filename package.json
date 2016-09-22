@@ -1,0 +1,25 @@
+{
+  "name": "slackbot-norrisbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/norrisbot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.4",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-readability": "^0.1.2",
+    "passport-slack": "0.0.6",
+    "slackbots": "^0.5.1"
+  }
+}

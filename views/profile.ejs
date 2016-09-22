@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h1><i class="fa fa-cog"> Profile Page</i></h1>
+				<a href="logout" class='btn btn-default btn-lg'>Logout</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<div class="well">
+							<div class="row">
+								<div class="col-xs-7"><i class="fa fa-user"></i> Local</div>
+								<div class="col-xs-5">
+									<% if (user.local.email) { %>
+										<a href="unlink/local" class="btn btn-default">Unlink</a>
+									<% } else { %>
+										<a href="connect/local" class="btn btn-default">Connect</a>
+									<% } %>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<% if (user.local.email) { %>
+										<strong>id</strong>: <%= user._id %><br>
+										<strong>email</strong>: <%= user.local.email %><br>
+										<strong>password</strong>: <%= user.local.password %>
+									<% } %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<div class="well">
+							<div class="row">
+								<div class="col-xs-7"><i class="fa fa-user"></i> Slack</div>
+								<div class="col-xs-5">
+									<% if (user.slack.token) { %>
+										<a href="unlink/slack" class="btn btn-default">Unlink</a>
+									<% } else { %>
+										<a href="connect/slack" class="btn btn-default">Connect</a>
+									<% } %>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<% if (user.slack.token) { %>
+										<strong>id</strong>: <%= user.slack.id %><br>
+										<strong>token</strong>: <%= user.slack.token %><br>
+										<strong>url</strong>: <%= user.slack.url %><br>
+										<strong>display Name</strong>: <%= user.slack.displayname %><br>
+										<strong>team</strong>: <%= user.slack.team %><br>
+										<strong>user</strong>: <%= user.slack.user %><br>
+										<strong>team_id</strong>: <%= user.slack.team_id %><br>
+										<strong>user_id</strong>: <%= user.slack.user_id %>
+									<% } %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<div class="well">
+							<div class="row">
+								<div class="col-xs-7 text-primary"><i class="fa fa-facebook"></i> Readability</div>
+								<div class="col-xs-5">
+									<% if (user.readability.token) { %>
+										<a href="unlink/read" class="btn btn-default btn-primary">Unlink</a>
+									<% } else { %>
+										<a href="connect/read" class="btn btn-default btn-primary">Connect</a>
+									<% } %>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<% if (user.readability.token) { %>
+										<strong>id</strong>: <%= user.readability.id %><br>
+										<strong>token</strong>: <%= user.readability.token %><br>
+										<strong>username</strong>: <%= user.readability.username %><br>
+										<strong>kindle</strong>: <%= user.readability.kindle %><br>
+										<strong>read Email</strong>: <%= user.readability.readEmail %><br>
+										<strong>email</strong>: <%= user.readability.email %><br>
+										<strong>avatarURL</strong>: <%= user.readability.avatarURL %>
+									<% } %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>	
+</body>
+</html>
